@@ -1,0 +1,106 @@
+html { min-height: 100vh; }
+body{
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background-color: #fbda61;
+   background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+   font-family: 'Noto Sans KR', sans-serif;
+}
+.clock{
+  --circle : 7em;
+  position: relative;
+  display:flex;
+  justify-content: center;
+  border:solid 0.15em #666;
+  height: var(--circle);
+  width: var(--circle);
+  border-radius:100%;
+  font-family: 'Great Vibes', cursive;
+  font-size: 8vmin;
+  color:#333;
+  background:#fefcec;
+  box-shadow: 0 0 .1em .1em #0004,
+              0 0 1.5em 1em #0003;
+}
+
+.clock_number {
+  position:absolute;
+  height: calc( var( --circle ) / 2 );
+  transform: rotate( var( --rot ));
+  transform-origin: 50% 100%;
+}
+.clock_number > span {
+   display:block;
+   transform-origin: 50% 50%;
+   transform: rotate( var( --rot));
+}
+.clock_brand{
+   position:absolute;
+   margin: 0 auto;
+   top: 25%;
+   font-size: 30%;
+}
+.clock_madeIn{
+   position:absolute;
+   margin: 0 auto;
+   top: 60%;
+   font-size:10%;
+   font-family: 'Noto Sans KR', sans-serif;
+}
+.clock_hands{
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   height: var( --circle );
+   width: var( --circle );
+   filter: drop-shadow(0.05em 0.05em 0.05em #0008);
+}
+.clock_hands > * {
+   position: absolute;
+   box-sizing: border-box;
+   height: calc( var( --circle ) / 2);
+   transform-origin: 50% 100%;
+   transform: rotate( var(--rot));
+   -webkit-backface-visibility: hidden;
+}
+.clock_Black{
+   --size: calc( 0.07 * var( --circle ));
+   position:absolute;
+   width: var(--size);
+   height:0.5em;
+   border-radius: 100%;
+   background:#333;
+}
+.clock_Red{
+  --size: calc( 0.035 * var( --circle ));
+  position:absolute;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  background:#d00; 
+}
+.clock_glass{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  border-radius:100%;
+  background: radial-gradient(at 28% 30%, #fffc 5%, #0000 20%, #0003 80%);
+}
+.clock_hour{
+   align-self: start;
+   width:0.3em;
+   border-bottom: solid calc(0.22 * var(--circle));
+}
+.clock_minutes{
+  align-self: start;
+  width:0.2em;
+  border-bottom: solid calc(0.4 * var(--circle));
+}
+
+.clock_second{
+  align-self: start;
+  width:0.08em;
+  border-bottom: solid calc(0.42 * var(--circle)) #d00;
+}
